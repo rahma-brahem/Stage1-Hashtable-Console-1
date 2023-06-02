@@ -73,12 +73,24 @@ public class Service {
     
     
     
-    public int hachage(String value){
+    public int hash1(String value){
         int s=0 ;
         for(char ch:value.toCharArray()){
-            s=s+(int)ch;   
+            s=s+(int)ch;
         }
         return(s%3);
+    }
+
+    public int hachage(String value){
+        int s=0 ;
+        int x=value.length()-1;
+        char[] charr = value.toCharArray();
+        for(int i =0;i<charr.length;i++){
+
+            s=(int)(s+(int)charr[i]*Math.pow(31,x));
+            x=x-1;
+        }
+        return(s%tab.getNodes().length);
     }
 
 public boolean remove(String value) {

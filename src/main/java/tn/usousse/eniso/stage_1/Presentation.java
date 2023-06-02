@@ -14,12 +14,15 @@ public class Presentation {
     }
 
     public void letsStart() {
-        Table tab = new Table(3);
-        Service service = new Service(tab);
         Scanner s = new Scanner(System.in);
-        String name = null;
+        System.out.println("welcome to Rahma's first console app :)");
+        System.out.println("enter size of table");
+        int size =Integer.valueOf(s.nextLine());
+        Table tab = new Table(size);
+        Service service = new Service(tab);
+
         boolean result = false;
-        System.out.println("welcome to rahma's first console app :)");
+
         System.out.println("would you like to start ?");
         String state = s.nextLine();
 
@@ -70,7 +73,7 @@ public class Presentation {
                     break;
             }
             System.out.println("would you like to continue");
-            state = s.next();
+            state = s.nextLine();
 
         }
 
